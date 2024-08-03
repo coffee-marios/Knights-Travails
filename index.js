@@ -19,5 +19,23 @@ function getMoves(x, y) {
   ];
 }
 
-const tea = getMoves(3, 3);
+function legalMove(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[0] >= 0 && arr[0] <= 7 && arr[1] >= 0 && arr[1] <= 7) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+}
+
+let potential = [];
+
+const tea = getMoves(0, 3);
+for (let i = 0; i < tea.length; i++) {
+  const test = legalMove(tea[i]);
+  if (test === true) potential.push(tea[i]);
+}
+
 console.log(tea);
+console.log(potential);
