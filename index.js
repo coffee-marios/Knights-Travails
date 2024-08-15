@@ -1,4 +1,6 @@
-function getMoves(x, y) {
+function getMoves(arr) {
+  let x = arr[0];
+  let y = arr[1];
   let posUpLeft = [x - 1, y + 2];
   let posUpRight = [x + 1, y + 2];
   let posLeftUp = [x - 2, y + 1];
@@ -29,13 +31,16 @@ function legalMove(arr) {
   }
 }
 
-let potential = [];
-
-const tea = getMoves(0, 3);
-for (let i = 0; i < tea.length; i++) {
-  const test = legalMove(tea[i]);
-  if (test === true) potential.push(tea[i]);
+function store(arr = null, solution) {
+  if (arr == null) return null;
+  let copyArr = [...arr];
+  return {
+    newMove: (value) => copyArr.push(value),
+  };
 }
 
-console.log(tea);
-console.log(potential);
+function knightPath(start, end) {}
+
+// console.log(tea);
+//console.log(potential);
+console.log(knightPath([0, 3], [1, 1]));
