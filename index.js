@@ -60,7 +60,7 @@ function compare(arr) {
   return optimal;
 }
 
-function knightPath(start, end) {
+function knightMoves(start, end) {
   if (start[0].toString() == end.toString()) {
     return [start];
   }
@@ -115,4 +115,4 @@ function knightPath(start, end) {
   }
 }
 
-knightPath([5, 1], [7, 0]);
+knightMoves([0, 0], [0, 1]);
