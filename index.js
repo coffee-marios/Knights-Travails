@@ -100,11 +100,19 @@ function knightPath(start, end) {
   }
 
   let first = [...startingPoint.getArr()];
+
   repeat(first, end);
   let final = compare([...pathsToVictory]);
-  console.log("solution");
+  let numberMoves = final.length - 1;
 
-  return final;
+  const Message =
+    numberMoves > 1
+      ? `You've made it in ${numberMoves} moves!`
+      : `You've made it in ${numberMoves} move!`;
+  console.log(Message);
+  for (let i = 0; i <= numberMoves; i++) {
+    console.log(final[i]);
+  }
 }
 
-console.log(knightPath([0, 0], [6, 1]));
+knightPath([5, 1], [7, 0]);
